@@ -1,0 +1,21 @@
+{
+    "name": "acf-snippets-vscode",
+    "displayName": "acf-snippets-vscode",
+    "description": "ACF snippets for WordPress development",
+    "version": "0.0.1",
+    "publisher": "baerkins",
+    "engines": {
+        "vscode": "^1.22.0"
+    },
+    "categories": [
+        "Snippets"
+    ],
+    "contributes": {
+        "snippets": [
+            {
+                "language": "php",
+                "path": "./snippets/snippets.json"
+            }
+        ]
+    }
+}
