@@ -1,65 +1,91 @@
-# acf-snippets-vscode README
+# Advanced Custom Fields Snippets for VSCode Text
+# ===============================================
 
-This is the README for your extension "acf-snippets-vscode". After writing up a brief description, we recommend including the following sections.
+## Ported from [acf_snippets](https://github.com/baerkins/acf_snippets) for Sublime
 
-## Features
+This is a collection of VSCode Text snippets for the [Advanced Custom Fields](http://www.advancedcustomfields.com/) Wordpress plugin.
 
-Describe specific features of your extension including screenshots of your extension in action. Image paths are relative to this README file.
 
-For example if there is an image subfolder under your extension project workspace:
+## Snippets
 
-\!\[feature X\]\(images/feature-x.png\)
+Snippets are described by `tabTrigger` - `codeOutput`.
 
-> Tip: Many popular extensions utilize animations. This is an excellent way to show off your extension! We recommend short, focused animations that are easy to follow.
+To make things the easiest to remember, snippet triggers are typically named as abbreviations for their output. For example, `tf` outputs (T)he (F)ield.
 
-## Requirements
+Field names and variable outputs that are auto-highlighted for replacement by VSCode are shown in the code wrapped in asterisks.
 
-If you have any requirements or dependencies, add a section describing those and how to install and configure them.
+*Note: All snippets need to be triggered within an open* `<?php` *tag. Once triggered, the snippet will close out the tag with* ` ?>`.
 
-## Extension Settings
+### Standard Field Snippets
+|Snippet|Output|
+|-------|------|
+| `tf` | `the_field('*field_name*'); ?>` |
+| `iftf` | `if_the_field('*field_name*'); ?>` |
+| `gf` | `get_field('*field_name*'); ?>` |
+| `ifgf` | `if_get_field('*field_name*'); ?>` |
+| `df` | Outputs a block of code for a date field |
+| `imgf` | Outputs a block of code for an Image ID field |
+| `imgobj` | Outputs a block of code for an Image Object field |
+| `relf` | Outputs a basic loop for a Relationship field |
 
-Include if your extension adds any VS Code settings through the `contributes.configuration` extension point.
 
-For example:
+### Sub Field Snippets
+|Snippet|Output|
+|-------|------|
+| `tsf` | `the_sub_field('*field_name*'); ?>` |
+| `gsf` | `get_sub_field('*field_name*'); ?>` |
+| `whsf` | `while(has_sub_field('*field_name*')) : ?>` |
+| `ifgsf` | `if(get_sub_field('*field_name*')) : ?>` |
+| `dsf` | Outputs a block of code for a date field |
+| `relsf` | Outputs a basic loop for a Relationship field |
 
-This extension contributes the following settings:
 
-* `myExtension.enable`: enable/disable this extension
-* `myExtension.thing`: set to `blah` to do something
+### Options Page Field Snippets
+*These snippets are the same as the standard and repeater snippets, but with an 'o' appended to the end.*
 
-## Known Issues
+|Snippet|Output|
+|-------|------|
+| `tfo` | `the_field('*field_name*', 'options'); ?>` |
+| `iftfo` | `if_the_field('*field_name*', 'options'); ?>` |
+| `gfo` | `get_field('*field_name*', 'options'); ?>` |
+| `ifgfo` | `if_get_field('*field_name*'); ?>` |
+| `tsfo` | `the_sub_field('*field_name*', 'options'); ?>` |
+| `whsfo` | `while(has_sub_field('*field_name*', 'options')) : ?>` |
+| `ifgsfo` | `if(get_sub_field('*field_name*', 'options')) : ?>` |
+| `imgfo` | Outputs a block of code for an Image ID field from the options page |
+| `imgobjo` | Outputs a block of code for an Image Object field from the options page |
+| `gmfo` | Outputs Google Map Field code for a single location from the options page |
+| `relfo` | Outputs a basic loop for a Relationship field from the options page |
 
-Calling out known issues can help limit users opening duplicate issues against your extension.
+### Repeater Field Snippets
+|Snippet|Output|
+|-------|------|
+| `rf` | Outputs a block of code that opens and closes a repeater field loop |
+| `rfo` | Outputs a block of code that opens and closes a repeater field loop from the options page. |
 
-## Release Notes
+### Flexible Field Snippets
+|Snippet|Output|
+|-------|------|
+| `ffall` | Outputs a complete block (think _all_ of the code) of a flexible field statement with a single flex field row element |
+| `ffpart` | Outputs only a single flex field row element (think _part_ of the code) |
 
-Users appreciate release notes as you update your extension.
+### Gallery Field Snippets
+| `gallf` | Outputs a block of code for an Image Gallery field |
+| `gallsf` | Outputs a block of code for an Image Gallery sub-field |
+| `gallo` | Outputs a block of code for an Image Gallery Field on an Options Page |
 
-### 1.0.0
+### Google Map Field Snippets
+|Snippet|Output|
+|-------|------|
+| `gmf` | Outputs Google Map Field code for a single location |
+| `gmsf` | Outputs Google Map Sub Field code for a single location |
 
-Initial release of ...
+## Utility Snippets
+These snippets serve specific purposes, but are a few bits of code that I have found useful, so maybe you will too!
 
-### 1.0.1
+`acfcreateoptions`
+Used in functions.php, this snippet will output code that will create an mulitple options page in ACF 5. Code should be editted to reflect Option page names.
 
-Fixed issue #.
+`acffirstrepeater`
+This will output a repeater snippet that will retrieve only the first row of a repeater field.
 
-### 1.1.0
-
-Added features X, Y, and Z.
-
------------------------------------------------------------------------------------------------------------
-
-## Working with Markdown
-
-**Note:** You can author your README using Visual Studio Code.  Here are some useful editor keyboard shortcuts:
-
-* Split the editor (`Cmd+\` on macOS or `Ctrl+\` on Windows and Linux)
-* Toggle preview (`Shift+CMD+V` on macOS or `Shift+Ctrl+V` on Windows and Linux)
-* Press `Ctrl+Space` (Windows, Linux) or `Cmd+Space` (macOS) to see a list of Markdown snippets
-
-### For more information
-
-* [Visual Studio Code's Markdown Support](http://code.visualstudio.com/docs/languages/markdown)
-* [Markdown Syntax Reference](https://help.github.com/articles/markdown-basics/)
-
-**Enjoy!**
