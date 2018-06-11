@@ -1,5 +1,6 @@
 {
     "name": "acf-snippets-vscode",
+    "homepage": "https://github.com/baerkins/acf-snippets-vscode",
     "displayName": "ACS Snippets - VSCode",
     "description": "ACF snippets for WordPress development",
     "version": "0.0.1",
