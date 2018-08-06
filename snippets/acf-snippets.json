@@ -1,247 +1,247 @@
 {
 	"acfcreateoptions": {
 		"prefix": "acfcreateoptions",
-		"body": "\n// Add ACF Menu\nif ( function_exists( \"acf_add_options_page\" ) ) {\n  acf_add_options_page();\n}\n\n// Add Specific ACF Menu Pages\nif ( function_exists( \"register_options_page\" ) ) {\n  register_options_page( 'Global Options' );\n  register_options_page( 'Another Options Page' );\n}\n",
+		"body": "// Add ACF Menu\nif ( function_exists( \"acf_add_options_page\" ) ) {\n  acf_add_options_page();\n}\n\n// Add Specific ACF Menu Pages\nif ( function_exists( \"register_options_page\" ) ) {\n  register_options_page( 'Global Options' );\n  register_options_page( 'Another Options Page' );\n}",
 		"description": "",
 		"scope": "source.php"
 	},
 	"acffirstrepeater": {
 		"prefix": "acffirstrepeater",
-		"body": "\n// Get First Repeater Row\n$first_row = true;\nif ( have_rows( '${1:field_name}' ) ) : ?>\n  <?php while ( $first_row && have_rows( '${1:field_name}' ) ) : the_row(); ?>\n    <${2:div}><?php the_sub_field( '${3:sub_field_name}' ); ?></${2:div}>\n    <?php $first_row = false;\n  endwhile; ?>\n<?php endif;\n",
+		"body": "// Get First Repeater Row\n$first_row = true;\nif ( have_rows( '${1:field_name}' ) ) : ?>\n  <?php while ( $first_row && have_rows( '${1:field_name}' ) ) : the_row(); ?>\n    <${2:div}><?php the_sub_field( '${3:sub_field_name}' ); ?></${2:div}>\n    <?php $first_row = false;\n  endwhile; ?>\n<?php endif;",
 		"description": "",
 		"scope": "source.php"
 	},
 	"df": {
 		"prefix": "df",
-		"body": "\n$date = DateTime::createFromFormat( 'Ymd', get_field( '${1:field_name}' ) );\necho $date->format('d-m-Y');\n",
+		"body": "$date = DateTime::createFromFormat( 'Ymd', get_field( '${1:field_name}' ) );\necho $date->format('d-m-Y');",
 		"description": "",
 		"scope": "source.php"
 	},
 	"dfo": {
 		"prefix": "dfo",
-		"body": "\n$date = DateTime::createFromFormat( 'Ymd', get_field( '${1:field_name}', 'options' ) );\necho $date->format('d-m-Y');\n",
+		"body": "$date = DateTime::createFromFormat( 'Ymd', get_field( '${1:field_name}', 'options' ) );\necho $date->format('d-m-Y');",
 		"description": "",
 		"scope": "source.php"
 	},
 	"dsf": {
 		"prefix": "dsf",
-		"body": "\n$date = DateTime::createFromFormat( 'Ymd', get_sub_field( '${1:field_name}' ) );\necho $date->format('d-m-Y');\n",
+		"body": "$date = DateTime::createFromFormat( 'Ymd', get_sub_field( '${1:field_name}' ) );\necho $date->format('d-m-Y');",
 		"description": "",
 		"scope": "source.php"
 	},
 	"ffall": {
 		"prefix": "ffall",
-		"body": "\n// Start Flexible Content\nif ( have_rows( '${1:field_name}' ) ) : ?>\n\t<?php while ( have_rows('${1:field_name}' ) ) : the_row();\n\n\t\t// Layout Name: ${2:layout_name}\n\t\tif ( get_row_layout() == '${3:layout_field}' ) : ?>\n\t\t\t<${4:div}>\n\t\t\t\t<?php the_sub_field( '${5:field_name}' ); ?>\n\t\t\t</${4:div}>\n\n\t\t<?php endif; ?>\n\t<?php endwhile; ?>\n<?php endif;\n",
+		"body": "// Start Flexible Content\nif ( have_rows( '${1:field_name}' ) ) : ?>\n\t<?php while ( have_rows('${1:field_name}' ) ) : the_row();\n\n\t\t// Layout Name: ${2:layout_name}\n\t\tif ( get_row_layout() == '${3:layout_field}' ) : ?>\n\t\t\t<${4:div}>\n\t\t\t\t<?php the_sub_field( '${5:field_name}' ); ?>\n\t\t\t</${4:div}>\n\n\t\t<?php endif; ?>\n\t<?php endwhile; ?>\n<?php endif;",
 		"description": "",
 		"scope": "source.php"
 	},
 	"ffpart": {
 		"prefix": "ffpart",
-		"body": "\n\n\t// Layout Name: ${1:layout_name}\n\telseif ( get_row_layout() == '${2:layout_field}' ) : ?>\n\t\t<${3:div}>\n\t\t\t<?php the_sub_field( '${4:field_name}' ); ?>\n\t\t</${3:div}>\n\n",
+		"body": "// Layout Name: ${1:layout_name}\n\telseif ( get_row_layout() == '${2:layout_field}' ) : ?>\n\t\t<${3:div}>\n\t\t\t<?php the_sub_field( '${4:field_name}' ); ?>\n\t\t</${3:div}>\n",
 		"description": "",
 		"scope": "source.php"
 	},
 	"gallf": {
 		"prefix": "gallf",
-		"body": "\n// ACF Image Gallery\n$images = get_field( '${1:field_name}' );\nif ( $images ) : ?>\n  <${2:ul}>\n    <?php foreach ( $images as $image ) : ?>\n      <${3:li}>\n        <a href=\"<?php echo $image['url']; ?>\">\n          <img src=\"<?php echo $image['sizes']['thumbnail']; ?>\" alt=\"<?php echo $image['alt']; ?>\" />\n        </a>\n        <p><?php echo $image['caption']; ?></p>\n      </${3:li}>\n    <?php endforeach; ?>\n  </${2:ul}>\n<?php endif;\n",
+		"body": "// ACF Image Gallery\n$images = get_field( '${1:field_name}' );\nif ( $images ) : ?>\n  <${2:ul}>\n    <?php foreach ( $images as $image ) : ?>\n      <${3:li}>\n        <a href=\"<?php echo $image['url']; ?>\">\n          <img src=\"<?php echo $image['sizes']['thumbnail']; ?>\" alt=\"<?php echo $image['alt']; ?>\" />\n        </a>\n        <p><?php echo $image['caption']; ?></p>\n      </${3:li}>\n    <?php endforeach; ?>\n  </${2:ul}>\n<?php endif;",
 		"description": "",
 		"scope": "source.php"
 	},
 	"gallof": {
 		"prefix": "gallof",
-		"body": "\n// ACF Image Gallery\n$images = get_field( '${1:field_name}', 'options' );\nif ( $images ) : ?>\n  <${2:ul}>\n    <?php foreach ( $images as $image ) : ?>\n      <${3:li}>\n        <a href=\"<?php echo $image['url']; ?>\">\n          <img src=\"<?php echo $image['sizes']['thumbnail']; ?>\" alt=\"<?php echo $image['alt']; ?>\" />\n        </a>\n        <p><?php echo $image['caption']; ?></p>\n      </${3:li}>\n    <?php endforeach; ?>\n  </${2:ul}>\n<?php endif;\n",
+		"body": "// ACF Image Gallery\n$images = get_field( '${1:field_name}', 'options' );\nif ( $images ) : ?>\n  <${2:ul}>\n    <?php foreach ( $images as $image ) : ?>\n      <${3:li}>\n        <a href=\"<?php echo $image['url']; ?>\">\n          <img src=\"<?php echo $image['sizes']['thumbnail']; ?>\" alt=\"<?php echo $image['alt']; ?>\" />\n        </a>\n        <p><?php echo $image['caption']; ?></p>\n      </${3:li}>\n    <?php endforeach; ?>\n  </${2:ul}>\n<?php endif;",
 		"description": "",
 		"scope": "source.php"
 	},
 	"gallsf": {
 		"prefix": "gallsf",
-		"body": "\n// ACF Image Gallery\n$images = get_sub_field( '${1:field_name}' );\nif ( $images ) : ?>\n  <${2:ul}>\n    <?php foreach ( $images as $image ) : ?>\n      <${3:li}>\n        <a href=\"<?php echo $image['url']; ?>\">\n          <img src=\"<?php echo $image['sizes']['thumbnail']; ?>\" alt=\"<?php echo $image['alt']; ?>\" />\n        </a>\n        <p><?php echo $image['caption']; ?></p>\n      </${3:li}>\n    <?php endforeach; ?>\n  </${2:ul}>\n<?php endif;\n",
+		"body": "// ACF Image Gallery\n$images = get_sub_field( '${1:field_name}' );\nif ( $images ) : ?>\n  <${2:ul}>\n    <?php foreach ( $images as $image ) : ?>\n      <${3:li}>\n        <a href=\"<?php echo $image['url']; ?>\">\n          <img src=\"<?php echo $image['sizes']['thumbnail']; ?>\" alt=\"<?php echo $image['alt']; ?>\" />\n        </a>\n        <p><?php echo $image['caption']; ?></p>\n      </${3:li}>\n    <?php endforeach; ?>\n  </${2:ul}>\n<?php endif;",
 		"description": "",
 		"scope": "source.php"
 	},
 	"gf": {
 		"prefix": "gf",
-		"body": "\nget_field( '${1:field_name}' );\n",
+		"body": "get_field( '${1:field_name}' );",
 		"description": "",
 		"scope": "source.php"
 	},
 	"gfo": {
 		"prefix": "gfo",
-		"body": "\nget_field( '${1:field_name}', 'options' );\n",
+		"body": "get_field( '${1:field_name}', 'options' );",
 		"description": "",
 		"scope": "source.php"
 	},
 	"gsf": {
 		"prefix": "gsf",
-		"body": "\nget_sub_field( '${1:field_name}' );\n",
+		"body": "get_sub_field( '${1:field_name}' );",
 		"description": "",
 		"scope": "source.php"
 	},
 	"gsfo": {
 		"prefix": "gsfo",
-		"body": "\nget_sub_field( '${1:field_name}', 'options' );\n",
+		"body": "get_sub_field( '${1:field_name}', 'options' );",
 		"description": "",
 		"scope": "source.php"
 	},
 	"gmf": {
 		"prefix": "gmf",
-		"body": "\n// ACF Google Map\n$location = get_field( '${1:field_name}' );\nif ( ! empty($location) ) : ?>\n\n<div class=\"acf-map\">\n  <div class=\"marker\" data-lat=\"<?php echo $location['lat']; ?>\" data-lng=\"<?php echo $location['lng']; ?>\"></div>\n</div>\n\n<?php endif;\n",
+		"body": "// ACF Google Map\n$location = get_field( '${1:field_name}' );\nif ( ! empty($location) ) : ?>\n\n<div class=\"acf-map\">\n  <div class=\"marker\" data-lat=\"<?php echo $location['lat']; ?>\" data-lng=\"<?php echo $location['lng']; ?>\"></div>\n</div>\n\n<?php endif;",
 		"description": "",
 		"scope": "source.php"
 	},
 	"gmfo": {
 		"prefix": "gmfo",
-		"body": "\n// ACF Google Map\n$location = get_field( '${1:field_name}', 'options' );\nif ( ! empty($location) ) : ?>\n\n<div class=\"acf-map\">\n  <div class=\"marker\" data-lat=\"<?php echo $location['lat']; ?>\" data-lng=\"<?php echo $location['lng']; ?>\"></div>\n</div>\n\n<?php endif;\n",
+		"body": "// ACF Google Map\n$location = get_field( '${1:field_name}', 'options' );\nif ( ! empty($location) ) : ?>\n\n<div class=\"acf-map\">\n  <div class=\"marker\" data-lat=\"<?php echo $location['lat']; ?>\" data-lng=\"<?php echo $location['lng']; ?>\"></div>\n</div>\n\n<?php endif;",
 		"description": "",
 		"scope": "source.php"
 	},
 	"gmsf": {
 		"prefix": "gmsf",
-		"body": "\n// ACF Google Map\n$location = get_sub_field( '${1:field_name}' );\nif ( ! empty($location) ) : ?>\n\n<div class=\"acf-map\">\n  <div class=\"marker\" data-lat=\"<?php echo $location['lat']; ?>\" data-lng=\"<?php echo $location['lng']; ?>\"></div>\n</div>\n\n<?php endif;\n",
+		"body": "// ACF Google Map\n$location = get_sub_field( '${1:field_name}' );\nif ( ! empty($location) ) : ?>\n\n<div class=\"acf-map\">\n  <div class=\"marker\" data-lat=\"<?php echo $location['lat']; ?>\" data-lng=\"<?php echo $location['lng']; ?>\"></div>\n</div>\n\n<?php endif;",
 		"description": "",
 		"scope": "source.php"
 	},
 	"ifgf": {
 		"prefix": "ifgf",
-		"body": "\nif ( get_field( '${1:field_name}' ) ) :\n",
+		"body": "if ( get_field( '${1:field_name}' ) ) :",
 		"description": "",
 		"scope": "source.php"
 	},
 	"ifgfo": {
 		"prefix": "ifgfo",
-		"body": "\nif ( get_field( '${1:field_name}', 'options' ) ) :\n",
+		"body": "if ( get_field( '${1:field_name}', 'options' ) ) :",
 		"description": "",
 		"scope": "source.php"
 	},
 	"ifgsf": {
 		"prefix": "ifgsf",
-		"body": "\nif ( get_sub_field( '${1:field_name}' ) ) :\n",
+		"body": "if ( get_sub_field( '${1:field_name}' ) ) :",
 		"description": "",
 		"scope": "source.php"
 	},
 	"ifgsfo": {
 		"prefix": "ifgsfo",
-		"body": "\nif ( get_sub_field( '${1:field_name}', 'options' ) ) :\n",
+		"body": "if ( get_sub_field( '${1:field_name}', 'options' ) ) :",
 		"description": "",
 		"scope": "source.php"
 	},
 	"iftf": {
 		"prefix": "iftf",
-		"body": "\nif ( the_field( '${1:field_name}' ) ) :\n",
+		"body": "if ( the_field( '${1:field_name}' ) ) :",
 		"description": "",
 		"scope": "source.php"
 	},
 	"iftfo": {
 		"prefix": "iftfo",
-		"body": "\nif ( the_field( '${1:field_name}', 'options' ) ) :\n",
+		"body": "if ( the_field( '${1:field_name}', 'options' ) ) :",
 		"description": "",
 		"scope": "source.php"
 	},
 	"iftsf": {
 		"prefix": "iftsf",
-		"body": "\nif ( the_sub_field( '${1:field_name}' ) ) :\n",
+		"body": "if ( the_sub_field( '${1:field_name}' ) ) :",
 		"description": "",
 		"scope": "source.php"
 	},
 	"iftsfo": {
 		"prefix": "iftsfo",
-		"body": "\nif ( the_sub_field( '${1:field_name}', 'options' ) ) :\n",
+		"body": "if ( the_sub_field( '${1:field_name}', 'options' ) ) :",
 		"description": "",
 		"scope": "source.php"
 	},
 	"imgf": {
 		"prefix": "imgf",
-		"body": "\n$attachment_id = get_field( '${1:field_name}' );\n$size          = \"${2:full}\";\n$image         = wp_get_attachment_image_src( $attachment_id, $size );\n\necho '<img src=\"' . $image[0] . '\" />';\n\n",
+		"body": "$attachment_id = get_field( '${1:field_name}' );\n$size          = \"${2:full}\";\n$image         = wp_get_attachment_image_src( $attachment_id, $size );\n\necho '<img src=\"' . $image[0] . '\" />';\n",
 		"description": "",
 		"scope": "source.php"
 	},
 	"imgfo": {
 		"prefix": "imgfo",
-		"body": "\n$attachment_id = get_field( '${1:field_name}', 'options' );\n$size          = \"${2:full}\";\n$image         = wp_get_attachment_image_src( $attachment_id, $size );\n\necho '<img src=\"' . $image[0] . '\" />';\n\n",
+		"body": "$attachment_id = get_field( '${1:field_name}', 'options' );\n$size          = \"${2:full}\";\n$image         = wp_get_attachment_image_src( $attachment_id, $size );\n\necho '<img src=\"' . $image[0] . '\" />';\n",
 		"description": "",
 		"scope": "source.php"
 	},
 	"imgobj": {
 		"prefix": "imgobj",
-		"body": "\n// ACF Image Object\n$image     = get_field( 'image' );\n$alt       = $image['alt'];\n$imageSize = $image['sizes'][ '${1:large}' ];\n\necho '<img src=\"' . $imageSize . '\" alt=\"' . $alt . '\" />';\n\n",
+		"body": "// ACF Image Object\n$image     = get_field( 'image' );\n$alt       = $image['alt'];\n$imageSize = $image['sizes'][ '${1:large}' ];\n\necho '<img src=\"' . $imageSize . '\" alt=\"' . $alt . '\" />';\n",
 		"description": "",
 		"scope": "source.php"
 	},
 	"imgobjo": {
 		"prefix": "imgobjo",
-		"body": "\n// ACF Image Object\n$image     = get_field( 'image', 'options' );\n$alt       = $image['alt'];\n$imageSize = $image['sizes'][ '${1:large}' ];\n\necho '<img src=\"' . $imageSize . '\" alt=\"' . $alt . '\" />';\n\n",
+		"body": "// ACF Image Object\n$image     = get_field( 'image', 'options' );\n$alt       = $image['alt'];\n$imageSize = $image['sizes'][ '${1:large}' ];\n\necho '<img src=\"' . $imageSize . '\" alt=\"' . $alt . '\" />';\n",
 		"description": "",
 		"scope": "source.php"
 	},
 	"imgobjsf": {
 		"prefix": "imgobjsf",
-		"body": "\n// ACF Image Object\n$image     = get_sub_field( 'image' );\n$alt       = $image['alt'];\n$imageSize = $image['sizes'][ '${1:large}' ];\n\necho '<img src=\"' . $imageSize . '\" alt=\"' . $alt . '\" />';\n\n",
+		"body": "// ACF Image Object\n$image     = get_sub_field( 'image' );\n$alt       = $image['alt'];\n$imageSize = $image['sizes'][ '${1:large}' ];\n\necho '<img src=\"' . $imageSize . '\" alt=\"' . $alt . '\" />';\n",
 		"description": "",
 		"scope": "source.php"
 	},
 	"relf": {
 		"prefix": "relf",
-		"body": "\n// ACF Relationship Field\n$posts = get_field( '${1:field_name}' );\nif ( $posts ) : ?>\n  <${2:ul}>\n  <?php foreach ( $posts as $post) : // variable must be called $post (IMPORTANT) ?>\n    <?php setup_postdata( $post ); ?>\n    <${3:li}>\n      <a href=\"<?php the_permalink(); ?>\"><?php the_title(); ?></a>\n      <p><?php the_excerpt(); ?></p>\n    </${3:li}>\n  <?php endforeach; ?>\n  </${2:ul}>\n  <?php wp_reset_postdata(); // IMPORTANT - reset the $post object so the rest of the page works correctly ?>\n<?php endif;\n",
+		"body": "// ACF Relationship Field\n$posts = get_field( '${1:field_name}' );\nif ( $posts ) : ?>\n  <${2:ul}>\n  <?php foreach ( $posts as $post) : // variable must be called $post (IMPORTANT) ?>\n    <?php setup_postdata( $post ); ?>\n    <${3:li}>\n      <a href=\"<?php the_permalink(); ?>\"><?php the_title(); ?></a>\n      <p><?php the_excerpt(); ?></p>\n    </${3:li}>\n  <?php endforeach; ?>\n  </${2:ul}>\n  <?php wp_reset_postdata(); // IMPORTANT - reset the $post object so the rest of the page works correctly ?>\n<?php endif;",
 		"description": "",
 		"scope": "source.php"
 	},
 	"relfo": {
 		"prefix": "relfo",
-		"body": "\n// ACF Relationship Field\n$posts = get_field( '${1:field_name}', 'options' );\nif ( $posts ) : ?>\n  <${2:ul}>\n  <?php foreach ( $posts as $post) : // variable must be called $post (IMPORTANT) ?>\n    <?php setup_postdata( $post ); ?>\n    <${3:li}>\n      <a href=\"<?php the_permalink(); ?>\"><?php the_title(); ?></a>\n      <p><?php the_excerpt(); ?></p>\n    </${3:li}>\n  <?php endforeach; ?>\n  </${2:ul}>\n  <?php wp_reset_postdata(); // IMPORTANT - reset the $post object so the rest of the page works correctly ?>\n<?php endif;\n",
+		"body": "// ACF Relationship Field\n$posts = get_field( '${1:field_name}', 'options' );\nif ( $posts ) : ?>\n  <${2:ul}>\n  <?php foreach ( $posts as $post) : // variable must be called $post (IMPORTANT) ?>\n    <?php setup_postdata( $post ); ?>\n    <${3:li}>\n      <a href=\"<?php the_permalink(); ?>\"><?php the_title(); ?></a>\n      <p><?php the_excerpt(); ?></p>\n    </${3:li}>\n  <?php endforeach; ?>\n  </${2:ul}>\n  <?php wp_reset_postdata(); // IMPORTANT - reset the $post object so the rest of the page works correctly ?>\n<?php endif;",
 		"description": "",
 		"scope": "source.php"
 	},
 	"relsf": {
 		"prefix": "relsf",
-		"body": "\n// ACF Relationship Field\n$posts = get_sub_field( '${1:field_name}' );\nif ( $posts ) : ?>\n  <${2:ul}>\n  <?php foreach ( $posts as $post ) : // variable must be called $post (IMPORTANT) ?>\n    <?php setup_postdata( $post ); ?>\n    <${3:li}>\n      <a href=\"<?php the_permalink(); ?>\"><?php the_title(); ?></a>\n      <p><?php the_excerpt(); ?></p>\n    </${3:li}>\n  <?php endforeach; ?>\n  </${2:ul}>\n  <?php wp_reset_postdata(); // IMPORTANT - reset the $post object so the rest of the page works correctly ?>\n<?php endif;\n",
+		"body": "// ACF Relationship Field\n$posts = get_sub_field( '${1:field_name}' );\nif ( $posts ) : ?>\n  <${2:ul}>\n  <?php foreach ( $posts as $post ) : // variable must be called $post (IMPORTANT) ?>\n    <?php setup_postdata( $post ); ?>\n    <${3:li}>\n      <a href=\"<?php the_permalink(); ?>\"><?php the_title(); ?></a>\n      <p><?php the_excerpt(); ?></p>\n    </${3:li}>\n  <?php endforeach; ?>\n  </${2:ul}>\n  <?php wp_reset_postdata(); // IMPORTANT - reset the $post object so the rest of the page works correctly ?>\n<?php endif;",
 		"description": "",
 		"scope": "source.php"
 	},
 	"rf": {
 		"prefix": "rf",
-		"body": "\nif ( have_rows( '${1:field_name}' ) ) : ?>\n\t<${2:ul}>\n\t\t<?php while ( have_rows( '${1:field_name}' ) ) : the_row(); ?>\n\t\t\t<${3:li}><?php the_sub_field( '${4:sub_field_name}' ); ?></${3:li}>\n\t\t<?php endwhile; ?>\n\t</${2:ul}>\n<?php endif;\n",
+		"body": "if ( have_rows( '${1:field_name}' ) ) : ?>\n\t<${2:ul}>\n\t\t<?php while ( have_rows( '${1:field_name}' ) ) : the_row(); ?>\n\t\t\t<${3:li}><?php the_sub_field( '${4:sub_field_name}' ); ?></${3:li}>\n\t\t<?php endwhile; ?>\n\t</${2:ul}>\n<?php endif;",
 		"description": "",
 		"scope": "source.php"
 	},
 	"rfo": {
 		"prefix": "rfo",
-		"body": "\nif ( have_rows( '${1:field_name}', 'options' ) ) : ?>\n\t<${2:ul}>\n\t\t<?php while ( have_rows( '${1:field_name}', 'options' ) ) : the_row(); ?>\n\t\t\t<${3:li}><?php the_sub_field( '${4:sub_field_name}' ); ?></${3:li}>\n\t\t<?php endwhile; ?>\n\t</${2:ul}>\n<?php endif;\n",
+		"body": "if ( have_rows( '${1:field_name}', 'options' ) ) : ?>\n\t<${2:ul}>\n\t\t<?php while ( have_rows( '${1:field_name}', 'options' ) ) : the_row(); ?>\n\t\t\t<${3:li}><?php the_sub_field( '${4:sub_field_name}' ); ?></${3:li}>\n\t\t<?php endwhile; ?>\n\t</${2:ul}>\n<?php endif;",
 		"description": "",
 		"scope": "source.php"
 	},
 	"tf": {
 		"prefix": "tf",
-		"body": "\nthe_field( '${1:field_name}' );\n",
+		"body": "the_field( '${1:field_name}' );",
 		"description": "",
 		"scope": "source.php"
 	},
 	"tfo": {
 		"prefix": "tfo",
-		"body": "\nthe_field( '${1:field_name}', 'options' );\n",
+		"body": "the_field( '${1:field_name}', 'options' );",
 		"description": "",
 		"scope": "source.php"
 	},
 	"tsf": {
 		"prefix": "tsf",
-		"body": "\nthe_sub_field( '${1:field_name}' );\n",
+		"body": "the_sub_field( '${1:field_name}' );",
 		"description": "",
 		"scope": "source.php"
 	},
 	"tsfo": {
 		"prefix": "tsfo",
-		"body": "\nthe_sub_field( '${1:field_name}', 'options' );\n",
+		"body": "the_sub_field( '${1:field_name}', 'options' );",
 		"description": "",
 		"scope": "source.php"
 	},
 	"whsf": {
 		"prefix": "whsf",
-		"body": "\nwhile ( has_sub_field('${1:field_name}' ) ) :\n",
+		"body": "while ( has_sub_field('${1:field_name}' ) ) :",
 		"description": "",
 		"scope": "source.php"
 	},
 	"whsfo": {
 		"prefix": "whsfo",
-		"body": "\nwhile ( has_sub_field( '${1:field_name}', 'options' ) ) :\n",
+		"body": "while ( has_sub_field( '${1:field_name}', 'options' ) ) :",
 		"description": "",
 		"scope": "source.php"
 	}

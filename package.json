@@ -7,7 +7,7 @@
     },
     "displayName": "ACS Snippets - VSCode",
     "description": "ACF snippets for WordPress development",
-    "version": "0.0.1",
+    "version": "0.0.2",
     "publisher": "baerkins",
     "engines": {
         "vscode": "^1.22.0"
