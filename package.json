@@ -5,9 +5,9 @@
       "type" : "git",
       "url" : "https://github.com/baerkins/acf-snippets-vscode.git"
     },
-    "displayName": "ACS Snippets - VSCode",
+    "displayName": "ACF Snippets - VSCode",
     "description": "ACF snippets for WordPress development",
-    "version": "0.0.2",
+    "version": "0.0.4",
     "publisher": "baerkins",
     "engines": {
         "vscode": "^1.22.0"
