@@ -43,43 +43,43 @@
 	},
 	"gallf": {
 		"prefix": "gallf",
-		"body": "// ACF Image Gallery\n$images = get_field( '${1:field_name}' );\nif ( $images ) : ?>\n  <${2:ul}>\n    <?php foreach ( $images as $image ) : ?>\n      <${3:li}>\n        <a href=\"<?php echo $image['url']; ?>\">\n          <img src=\"<?php echo $image['sizes']['thumbnail']; ?>\" alt=\"<?php echo $image['alt']; ?>\" />\n        </a>\n        <p><?php echo $image['caption']; ?></p>\n      </${3:li}>\n    <?php endforeach; ?>\n  </${2:ul}>\n<?php endif;",
+		"body": "// ACF Image Gallery\n$images = get_field( '$${1:field_name}' );\nif ( $$images ) : ?>\n  <${2:div}>\n    <?php foreach ( $$images as $$image ) : ?>\n      <${3:div}>\n        <a href=\"<?php echo $$image['url']; ?>\">\n          <img src=\"<?php echo $$image['sizes']['thumbnail']; ?>\" alt=\"<?php echo $$image['alt']; ?>\" />\n        </a>\n        <p><?php echo $image['caption']; ?></p>\n      </${3:div}>\n    <?php endforeach; ?>\n  </${2:div}>\n<?php endif;",
 		"description": "",
 		"scope": "source.php"
 	},
 	"gallof": {
 		"prefix": "gallof",
-		"body": "// ACF Image Gallery\n$images = get_field( '${1:field_name}', 'options' );\nif ( $images ) : ?>\n  <${2:ul}>\n    <?php foreach ( $images as $image ) : ?>\n      <${3:li}>\n        <a href=\"<?php echo $image['url']; ?>\">\n          <img src=\"<?php echo $image['sizes']['thumbnail']; ?>\" alt=\"<?php echo $image['alt']; ?>\" />\n        </a>\n        <p><?php echo $image['caption']; ?></p>\n      </${3:li}>\n    <?php endforeach; ?>\n  </${2:ul}>\n<?php endif;",
+		"body": "// ACF Image Gallery\n$images = get_field( '${1:field_name}', 'options' );\nif ( $images ) : ?>\n  <${2:div}>\n    <?php foreach ( $images as $image ) : ?>\n      <${3:div}>\n        <a href=\"<?php echo $image['url']; ?>\">\n          <img src=\"<?php echo $image['sizes']['thumbnail']; ?>\" alt=\"<?php echo $image['alt']; ?>\" />\n        </a>\n        <p><?php echo $image['caption']; ?></p>\n      </${3:div}>\n    <?php endforeach; ?>\n  </${2:div}>\n<?php endif;",
 		"description": "",
 		"scope": "source.php"
 	},
 	"gallsf": {
 		"prefix": "gallsf",
-		"body": "// ACF Image Gallery\n$images = get_sub_field( '${1:field_name}' );\nif ( $images ) : ?>\n  <${2:ul}>\n    <?php foreach ( $images as $image ) : ?>\n      <${3:li}>\n        <a href=\"<?php echo $image['url']; ?>\">\n          <img src=\"<?php echo $image['sizes']['thumbnail']; ?>\" alt=\"<?php echo $image['alt']; ?>\" />\n        </a>\n        <p><?php echo $image['caption']; ?></p>\n      </${3:li}>\n    <?php endforeach; ?>\n  </${2:ul}>\n<?php endif;",
+		"body": "// ACF Image Gallery\n$images = get_sub_field( '${1:field_name}' );\nif ( $images ) : ?>\n  <${2:div}>\n    <?php foreach ( $images as $image ) : ?>\n      <${3:div}>\n        <a href=\"<?php echo $image['url']; ?>\">\n          <img src=\"<?php echo $image['sizes']['thumbnail']; ?>\" alt=\"<?php echo $image['alt']; ?>\" />\n        </a>\n        <p><?php echo $image['caption']; ?></p>\n      </${3:div}>\n    <?php endforeach; ?>\n  </${2:div}>\n<?php endif;",
 		"description": "",
 		"scope": "source.php"
 	},
 	"gf": {
 		"prefix": "gf",
-		"body": "get_field( '${1:field_name}' );",
+		"body": "$${1:variable_name} = get_field( '${2:field_name}' );",
 		"description": "",
 		"scope": "source.php"
 	},
 	"gfo": {
 		"prefix": "gfo",
-		"body": "get_field( '${1:field_name}', 'options' );",
+		"body": "$${1:variable_name} = get_field( '${2:field_name}', 'options' );",
 		"description": "",
 		"scope": "source.php"
 	},
 	"gsf": {
 		"prefix": "gsf",
-		"body": "get_sub_field( '${1:field_name}' );",
+		"body": "$${1:variable_name} = get_sub_field( '${2:field_name}' );",
 		"description": "",
 		"scope": "source.php"
 	},
 	"gsfo": {
 		"prefix": "gsfo",
-		"body": "get_sub_field( '${1:field_name}', 'options' );",
+		"body": "$${1:variable_name} = get_sub_field( '${2:field_name}', 'options' );",
 		"description": "",
 		"scope": "source.php"
 	},
@@ -151,13 +151,13 @@
 	},
 	"imgf": {
 		"prefix": "imgf",
-		"body": "$attachment_id = get_field( '${1:field_name}' );\n$size          = \"${2:full}\";\n$image         = wp_get_attachment_image_src( $attachment_id, $size );\n\necho '<img src=\"' . $image[0] . '\" />';\n",
+		"body": "$$attachment_id = get_field( '${1:field_name}' );\n$$size = \"${2:fdivl}\";\n$$image = wp_get_attachment_image( $$attachment_id, $$size );\n\necho $image;\n",
 		"description": "",
 		"scope": "source.php"
 	},
 	"imgfo": {
 		"prefix": "imgfo",
-		"body": "$attachment_id = get_field( '${1:field_name}', 'options' );\n$size          = \"${2:full}\";\n$image         = wp_get_attachment_image_src( $attachment_id, $size );\n\necho '<img src=\"' . $image[0] . '\" />';\n",
+		"body": "$attachment_id = get_field( '${1:field_name}', 'options' );\n$size          = \"${2:fdivl}\";\n$image         = wp_get_attachment_image_src( $attachment_id, $size );\n\necho '<img src=\"' . $$image[0] . '\" />';\n",
 		"description": "",
 		"scope": "source.php"
 	},
@@ -181,31 +181,31 @@
 	},
 	"relf": {
 		"prefix": "relf",
-		"body": "// ACF Relationship Field\n$posts = get_field( '${1:field_name}' );\nif ( $posts ) : ?>\n  <${2:ul}>\n  <?php foreach ( $posts as $post) : // variable must be called $post (IMPORTANT) ?>\n    <?php setup_postdata( $post ); ?>\n    <${3:li}>\n      <a href=\"<?php the_permalink(); ?>\"><?php the_title(); ?></a>\n      <p><?php the_excerpt(); ?></p>\n    </${3:li}>\n  <?php endforeach; ?>\n  </${2:ul}>\n  <?php wp_reset_postdata(); // IMPORTANT - reset the $post object so the rest of the page works correctly ?>\n<?php endif;",
+		"body": "// ACF Relationship Field\n$posts = get_field( '${1:field_name}' );\nif ( $posts ) : ?>\n  <${2:div}>\n  <?php foreach ( $posts as $post) : // variable must be called $post (IMPORTANT) ?>\n    <?php setup_postdata( $post ); ?>\n    <${3:div}>\n      <a href=\"<?php the_permadivnk(); ?>\"><?php the_title(); ?></a>\n      <p><?php the_excerpt(); ?></p>\n    </${3:div}>\n  <?php endforeach; ?>\n  </${2:div}>\n  <?php wp_reset_postdata(); // IMPORTANT - reset the $post object so the rest of the page works correctly ?>\n<?php endif;",
 		"description": "",
 		"scope": "source.php"
 	},
 	"relfo": {
 		"prefix": "relfo",
-		"body": "// ACF Relationship Field\n$posts = get_field( '${1:field_name}', 'options' );\nif ( $posts ) : ?>\n  <${2:ul}>\n  <?php foreach ( $posts as $post) : // variable must be called $post (IMPORTANT) ?>\n    <?php setup_postdata( $post ); ?>\n    <${3:li}>\n      <a href=\"<?php the_permalink(); ?>\"><?php the_title(); ?></a>\n      <p><?php the_excerpt(); ?></p>\n    </${3:li}>\n  <?php endforeach; ?>\n  </${2:ul}>\n  <?php wp_reset_postdata(); // IMPORTANT - reset the $post object so the rest of the page works correctly ?>\n<?php endif;",
+		"body": "// ACF Relationship Field\n$posts = get_field( '${1:field_name}', 'options' );\nif ( $posts ) : ?>\n  <${2:div}>\n  <?php foreach ( $posts as $post) : // variable must be called $post (IMPORTANT) ?>\n    <?php setup_postdata( $post ); ?>\n    <${3:div}>\n      <a href=\"<?php the_permadivnk(); ?>\"><?php the_title(); ?></a>\n      <p><?php the_excerpt(); ?></p>\n    </${3:div}>\n  <?php endforeach; ?>\n  </${2:div}>\n  <?php wp_reset_postdata(); // IMPORTANT - reset the $post object so the rest of the page works correctly ?>\n<?php endif;",
 		"description": "",
 		"scope": "source.php"
 	},
 	"relsf": {
 		"prefix": "relsf",
-		"body": "// ACF Relationship Field\n$posts = get_sub_field( '${1:field_name}' );\nif ( $posts ) : ?>\n  <${2:ul}>\n  <?php foreach ( $posts as $post ) : // variable must be called $post (IMPORTANT) ?>\n    <?php setup_postdata( $post ); ?>\n    <${3:li}>\n      <a href=\"<?php the_permalink(); ?>\"><?php the_title(); ?></a>\n      <p><?php the_excerpt(); ?></p>\n    </${3:li}>\n  <?php endforeach; ?>\n  </${2:ul}>\n  <?php wp_reset_postdata(); // IMPORTANT - reset the $post object so the rest of the page works correctly ?>\n<?php endif;",
+		"body": "// ACF Relationship Field\n$posts = get_sub_field( '${1:field_name}' );\nif ( $posts ) : ?>\n  <${2:div}>\n  <?php foreach ( $posts as $post ) : // variable must be called $post (IMPORTANT) ?>\n    <?php setup_postdata( $post ); ?>\n    <${3:div}>\n      <a href=\"<?php the_permadivnk(); ?>\"><?php the_title(); ?></a>\n      <p><?php the_excerpt(); ?></p>\n    </${3:div}>\n  <?php endforeach; ?>\n  </${2:div}>\n  <?php wp_reset_postdata(); // IMPORTANT - reset the $post object so the rest of the page works correctly ?>\n<?php endif;",
 		"description": "",
 		"scope": "source.php"
 	},
 	"rf": {
 		"prefix": "rf",
-		"body": "if ( have_rows( '${1:field_name}' ) ) : ?>\n\t<${2:ul}>\n\t\t<?php while ( have_rows( '${1:field_name}' ) ) : the_row(); ?>\n\t\t\t<${3:li}><?php the_sub_field( '${4:sub_field_name}' ); ?></${3:li}>\n\t\t<?php endwhile; ?>\n\t</${2:ul}>\n<?php endif;",
+		"body": "if ( have_rows( '${1:field_name}' ) ) : ?>\n\t<${2:div}>\n\t\t<?php while ( have_rows( '${1:field_name}' ) ) : the_row(); ?>\n\t\t\t<?php $${5:variable_name} = get_sub_field( '${4:sub_field_name}' ); ?>\n\t\t\t<${3:div}>${5:variable_name}</${3:ddiv}>\n\t\t<?php endwhile; ?>\n\t</${2:div}>\n<?php endif;",
 		"description": "",
 		"scope": "source.php"
 	},
 	"rfo": {
 		"prefix": "rfo",
-		"body": "if ( have_rows( '${1:field_name}', 'options' ) ) : ?>\n\t<${2:ul}>\n\t\t<?php while ( have_rows( '${1:field_name}', 'options' ) ) : the_row(); ?>\n\t\t\t<${3:li}><?php the_sub_field( '${4:sub_field_name}' ); ?></${3:li}>\n\t\t<?php endwhile; ?>\n\t</${2:ul}>\n<?php endif;",
+		"body": "if ( have_rows( '${1:field_name}', 'options' ) ) : ?>\n\t<${2:div}>\n\t\t<?php while ( have_rows( '${1:field_name}', 'options' ) ) : the_row(); ?>\n\t\t\t<${3:div}><?php the_sub_field( '${4:sub_field_name}' ); ?></${3:div}>\n\t\t<?php endwhile; ?>\n\t</${2:div}>\n<?php endif;",
 		"description": "",
 		"scope": "source.php"
 	},
