@@ -43,7 +43,7 @@
 	},
 	"gallf": {
 		"prefix": "gallf",
-		"body": "// ACF Image Gallery\n$images = get_field( '$${1:field_name}' );\nif ( $$images ) : ?>\n  <${2:div}>\n    <?php foreach ( $$images as $$image ) : ?>\n      <${3:div}>\n        <a href=\"<?php echo $$image['url']; ?>\">\n          <img src=\"<?php echo $$image['sizes']['thumbnail']; ?>\" alt=\"<?php echo $$image['alt']; ?>\" />\n        </a>\n        <p><?php echo $image['caption']; ?></p>\n      </${3:div}>\n    <?php endforeach; ?>\n  </${2:div}>\n<?php endif;",
+		"body": "// ACF Image Gallery\n$$images = get_field( '$${1:field_name}' );\nif ( $$images ) : ?>\n  <${2:div}>\n    <?php foreach ( $$images as $$image ) : ?>\n      <${3:div}>\n        <a href=\"<?php echo $$image['url']; ?>\">\n          <img src=\"<?php echo $$image['sizes']['thumbnail']; ?>\" alt=\"<?php echo $$image['alt']; ?>\" />\n        </a>\n        <p><?php echo $$image['caption']; ?></p>\n      </${3:div}>\n    <?php endforeach; ?>\n  </${2:div}>\n<?php endif;",
 		"description": "",
 		"scope": "source.php"
 	},
