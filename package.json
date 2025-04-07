@@ -1,26 +1,33 @@
 {
-    "name": "acf6-snippets-vscode",
-    "homepage": "https://github.com/paddywinc/acf-snippets-vscode",
-    "repository": {
-      "type" : "git",
-      "url" : "https://github.com/paddywinc/acf-snippets-vscode.git"
-    },
-    "displayName": "ACF Snippets - VSCode",
-    "description": "ACF snippets for WordPress development",
-    "version": "0.0.4",
-    "publisher": "paddyWinc",
-    "engines": {
-        "vscode": "^1.22.0"
-    },
-    "categories": [
-        "Snippets"
-    ],
-    "contributes": {
-        "snippets": [
-            {
-                "language": "php",
-                "path": "./snippets/acf-snippets.json"
-            }
-        ]
-    }
+	"name": "acf6-snippets-vscode",
+	"homepage": "https://github.com/paddywinc/acf-snippets-vscode",
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/paddywinc/acf-snippets-vscode.git"
+	},
+	"displayName": "ACF Snippets - VSCode",
+	"description": "ACF snippets for WordPress development",
+	"version": "0.0.4",
+	"publisher": "paddyWinc",
+	"engines": {
+		"vscode": "^1.22.0"
+	},
+	"categories": [
+		"Snippets"
+	],
+	"contributes": {
+		"snippets": [
+			{
+				"language": "php",
+				"path": "./snippets/acf-snippets.json"
+			}
+		]
+	},
+	"__metadata": {
+		"isApplicationScoped": false,
+		"installedTimestamp": 1724308126003,
+		"pinned": true,
+		"source": "vsix",
+		"size": 18995
+	}
 }
